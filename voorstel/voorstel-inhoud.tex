@@ -1,0 +1,44 @@
+%---------- Inleiding ---------------------------------------------------------
+
+\section{Introductie} % The \section*{} command stops section numbering
+\label{sec:introductie}
+
+Een van de grootste gevaren voor elk bedrijf dat gevoelige data verwerkt is een gegevenslek. Dit gebeurt niet alleen door externe (ongeveer 80\% van de aanvallen) maar ook interne aanvallers (ongeveer 19\%) \autocite{Widup2021}.
+De gemiddelde kost van zo een gegevenslek binnen een bedrijf is 3.86 miljoen euro  \autocite{2020}. 
+Daarom moet er bij het behandelen van gevoelige data, zoals persoonsdata, medische documenten of financiële data er voor gezorgd worden dat deze data maar op een paar kritieke momenten leesbaar is. Vaak is dat ook zo voor data in rust en in transport maar als data verwerkt wordt is dit een moeilijker opgave. Zeker als dat in de cloud gebeurt. Tot voor kort creëerden bedrijven zelf een veilige omgeving waar deze data verwerkt kan worden. Maar als een deel van deze omgeving succesvol zou aangevallen worden dan is heel de applicatie direct in gevaar. Daarom komen bedrijven zoals Intel, AMD en Amazon met hardware based beveiligng. Deze laten een beveiligde omgeving toe die losstaat van de rest van het systeem. Hierdoor minimaliseert men de aanvalsoppervlakte. En zelf voor de gebruikers met de hoogste privileges binnen het systeem is deze beveiligde omgeving onaantastbaar. Daardoor moet men niet vertrouwen op compliance en policy-gebaseerde benaderingen waar er toch vaak een gebruiker bestaat met alle macht. \autocite{DanielNewman2021}
+
+
+
+%---------- Stand van zaken ---------------------------------------------------
+
+\section{Stand van zaken}
+\label{sec:state-of-the-art}
+Trustonic beschrijft een Trusted execution environment als volgt 'A Trusted Execution Environment (TEE) is an environment for executing code, in which those executing the code can have high levels of trust in that surrounding environment, because it can ignore threats from the rest of the device.  \autocite{Felton2019}' Met andere woorden een TEE is een omgeving dat code uitvoert en gegevens bijhoudt die extreem beveiligd moeten zijn. Zelf als heel het syteem rond de TEE aangetast is zou de TEE nog altijd onaangetast moeten zijn. Dit kan natuurlijk op verschillende manieren bereikt worden. Daardoor zij er ook verscheidene technologieen van allerlei bedrijven die op andere manieren werken.
+
+\subsection{Waarom is een TEE nodig?}
+In computercode zullen er altijd fouten zijn en die fouten kunnen grotere problemen veroorzaken zoals een beveiligingsprobleem blootleggen. Hoe beveilig je dan de delen van het systeem die niet toegangekelijk moeten zijn voor de gebruiker. Zoals encryption keys en user credentials. \autocite{Prado2020}
+Als we er niet van kunnen uitgaan dat onze software te vertrouwen is dan moeten we vertrouwen op iets anders. Daar komt hardware bij te pas. Er zal dan ook onderzocht worden hoe deze hardware werkt. Maar ook hoe deze beveiligingen al omzeild zijn geweest door slimme aanvallen. En hoe nieuwe systemen hun daar tegen beveiligen.
+
+\subsection{Hoe zorgt een TEE voor vertrouwen?}
+Als we code draaien binnen deze TEE dan moeten we zeker zijn dat dit weldegelijk de juiste code is daarom moeten we een vertrouwen creëeren. dit gebeurt via signature checks en onveranderlijkheid van sommige delen. Hoe dit juist geimplementeerd wordt hangt weer af per product. In het onderzoek zal er ook op ingegaan worden.
+
+\subsection{Hoe werkt een TEE op de cloud?}
+In de cloud kiezen we natuurlijk niet altijd zelf onze hardware. De verschillende cloud vendors hebben dan ook verschillende manieren hoe ze TEE's aanbieden bijvoorbeeld Microsoft azure die gebruik maakt van Intel SGX chips  of hetgeen waar in dit onderzoek de focus op zal liggen het AWS Nitro Systeem en de AWS Nitro Enclaves. In het onderzoek zal ik verder ingaan wat dit betekent voor de developer zelf en hoe hij zijn applicatie zal moeten aanpassen naar gelang de gekozen cloud provider.
+
+%---------- Methodologie ------------------------------------------------------
+\section{Methodologie}
+\label{sec:methodologie}
+In dit onderzoek bekijken we verschillende trusted execution environments van de vendors die dit aanbieden en hoe deze differentiëren. Daarna bestuderen we hoe trusted execution environments geimplementeerd worden in de cloud en hoe het development process hiervoor zou moeten aangepast worden. Als proof of concept zal er dan ook een applicatie opgesteld worden. Die draait op een EC2 instance en dan ook een trusted environment nodig heeft voor het verwerken van zijn data. Daarvoor gaan we de de AWS Nitro Enclaves gebruiken. Daarna zullen we de tools die AWS levert benuttigen om de integriteit van de applicatie te bewijzen.
+
+
+%---------- Verwachte resultaten ----------------------------------------------
+\section{Verwachte resultaten}
+\label{sec:verwachte_resultaten}
+Dat er door een developer een werkende Applicatie kan opgezet worden met relatief gemak in vergelijking met oudere methoden. Waar de gevoelige data die verwerkt moet worden nooit ongencrypteerd beschikbaar is voor het systeem en de gebruikers van het systeem. Deze applicatie zal daarvoor gebruik maken van de AWS Nitro Enclaves waar de gevoelige data zal ongeëncrypteerd worden en daarna verwerkt. De integreteit van de applicatie binnen de Nitro Enclave zou dan ook moeten kunnen bewezen worden met de functies van AWS.
+
+%---------- Verwachte conclusies ----------------------------------------------
+\section{Verwachte conclusies}
+\label{sec:verwachte_conclusies}
+Er wordt verwacht dat met de nieuwe feature van AWS; de AWS Nitro Enclaves het simpeler wordt voor een developer om data in verwerking te beveiligen. Hierdoor kan men de risicos bij het behandelen van gevoelige data verminderen en er is geen vertrouwen meer nodig in de software die draait buiten de enclave en de gebruikers die daar machtigingen hebben.
+
+

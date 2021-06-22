@@ -1,0 +1,32 @@
+% Encoding: UTF-8
+
+@Report{Widup2021,
+  author = {Widup, Suzanne and Pinto, Alex and Hylender, David and Bassett, Gabriel and langlois, philippe},
+  title  = {2021 Verizon Data Breach Investigations Report},
+  url    = {https://enterprise.verizon.com/resources/reports/2021/2021-data-breach-investigations-report.pdf},
+  month  = {05},
+  year   = {2021},
+}
+
+@Report{2020,
+  date        = {2020},
+  institution = {IBM},
+  title       = {IBM: Cost of a Data Breach Report 2020},
+  type        = {resreport},
+  url         = {https://www.capita.com/sites/g/files/nginej291/files/2020-08/Ponemon-Global-Cost-of-Data-Breach-Study-2020.pdf},
+  year        = {2020},
+}
+
+@Article{DanielNewman2021,
+  author   = {Daniel Newman, Shelly Kramer},
+  date     = {2021},
+  title    = {The Rise of Confidential Computing},
+  subtitle = {Trust: The New Battlefiend in the Age of Digital Transformation},
+  url      = {https://futurumresearch.com/wp-content/uploads/2021/04/Futurum.Confidential-Computing-Research-Brief.pdf?utm_campaign=814961_Confidential Computing&utm_medium=email&utm_source=Futurum Research&dm_i=4R13,HGTT,4R36EL,22D3B,1},
+}
+
+@Article{,
+  url = {https://embeddedbits.org/introduction-to-trusted-execution-environment-tee-arm-trustzone/#:~:text=There are a lot of,created by Hex Five Security.},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}
